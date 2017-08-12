@@ -1,5 +1,6 @@
 package com.example.masood.simplecontactlist;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,16 +8,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.masood.simplecontactlist.database.MyContact;
 import com.example.masood.simplecontactlist.database.contactModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by masood on 8/7/17.
  */
 
 public class MyAdaptor extends RecyclerView.Adapter<MyAdaptor.ViewHolder> {
-    private ArrayList<contactModel> values;
+    private List<MyContact> values;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView contactName;
@@ -36,7 +39,7 @@ public class MyAdaptor extends RecyclerView.Adapter<MyAdaptor.ViewHolder> {
 
     }
 
-    public MyAdaptor(ArrayList<contactModel> values) {
+    public MyAdaptor(List<MyContact> values) {
         this.values = values;
     }
 
@@ -49,11 +52,16 @@ public class MyAdaptor extends RecyclerView.Adapter<MyAdaptor.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(MyAdaptor.ViewHolder holder, int position) {
-        final contactModel m = values.get(position);
+    public void onBindViewHolder(final MyAdaptor.ViewHolder holder, int position) {
+        final MyContact m = values.get(position);
         holder.contactName.setText(m.getContactName());
         holder.details.setText(m.getContactDetails());
         holder.userNumber.setText(m.getContactNumber());
+        holder.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
     }
 
     @Override
