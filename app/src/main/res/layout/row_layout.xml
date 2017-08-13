@@ -54,4 +54,21 @@
         android:layout_margin="8dp"
         android:id="@+id/delete_contact_iv"
         />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/delete_contact_iv"
+        android:src="@drawable/ic_edit_contact"
+        android:layout_margin="8dp"
+        android:id="@+id/edit_contact_iv"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_send_message"
+        android:layout_margin="8dp"
+        android:layout_below="@id/edit_contact_iv"
+        android:layout_alignParentRight="true"
+        android:id="@+id/send_message_iv"
+        />
 </RelativeLayout>
