@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.masood.simplecontactlist.database.MyContact;
 import com.example.masood.simplecontactlist.database.contactModel;
@@ -20,12 +21,14 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ImageView addBtn;
-
+    private int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        count = 0;
 
         SugarDb db = new SugarDb(this);
         db.onCreate(db.getDB());
@@ -51,6 +54,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-
+    @Override
+    public void onBackPressed() {
+        count++;
+        if(count==1) {
+            Toast.makeText(getApplicationContext(),"Press again to exit!",Toast.LENGTH_SHORT).show();
+        }
+        if(count==2) {
+            finish();
+            System.exit(0);
+        }
+    }
 }
