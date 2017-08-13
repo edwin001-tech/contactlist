@@ -34,6 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Number"
+        android:inputType="phone"
         android:layout_below="@id/add_ac_detail_et"
         android:layout_margin="6dp"
         android:id="@+id/add_ac_number_et"

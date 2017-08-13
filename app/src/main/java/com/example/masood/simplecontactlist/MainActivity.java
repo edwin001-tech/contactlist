@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private ImageView addBtn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
         List<MyContact> input = MyContact.listAll(MyContact.class);
-        mAdapter = new MyAdaptor(input);
+        mAdapter = new MyAdaptor(input,getApplicationContext());
         recyclerView.setAdapter(mAdapter);
 
         addBtn = (ImageView) findViewById(R.id.add_new_contact_btn);

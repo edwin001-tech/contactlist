@@ -20,11 +20,11 @@ public class AddContactActivity extends AppCompatActivity implements View.OnClic
     private EditText name, detail, number;
     private Button saveBtn;
     private TextView tv;
-    private int id;
+    private long id;
     private MyContact mContact;
 
     private static final String EXTRA_MESSAGE_ID = "contactId";
-    public static Intent getActivityIntent(Context cntx, int id) {
+    public static Intent getActivityIntent(Context cntx, long id) {
         Intent i = new Intent(cntx,AddContactActivity.class);
         i.putExtra(EXTRA_MESSAGE_ID,id);
         return i;
@@ -41,7 +41,7 @@ public class AddContactActivity extends AppCompatActivity implements View.OnClic
         tv = (TextView) findViewById(R.id.tempTEXT);
 
         Intent i = getIntent();
-        id = i.getIntExtra(EXTRA_MESSAGE_ID,-1);
+        id = i.getLongExtra(EXTRA_MESSAGE_ID,-1);
         if(id!=-1) {
             mContact = MyContact.findById(MyContact.class,id);
             name.setText(mContact.getContactName());
@@ -55,6 +55,10 @@ public class AddContactActivity extends AppCompatActivity implements View.OnClic
 //                Log.wtf("INPUT",name.getText().toString()+ " - " + detail.getText().toString() + " - " + number.getText().toString());
         if(id==-1) {
             mContact = new MyContact(name.getText().toString(),detail.getText().toString(),number.getText().toString());
+        } else {
+            mContact.setContactName(name.getText().toString());
+            mContact.setContactDetails(detail.getText().toString());
+            mContact.setContactNumber(number.getText().toString());
         }
         mContact.save();
         Intent i = new Intent(getApplicationContext(),MainActivity.class);

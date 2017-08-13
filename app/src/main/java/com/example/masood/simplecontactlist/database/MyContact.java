@@ -34,5 +34,17 @@ public class MyContact extends SugarRecord {
     public String getContactNumber() {
         return contactNumber;
     }
+
+    public void setContactName(String name) {
+        this.contactName = name;
+    }
+
+    public void setContactDetails(String details) {
+        this.contactDetails = details;
+    }
+
+    public void setContactNumber(String number) {
+        this.contactNumber = number;
+    }
 }
 
