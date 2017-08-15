@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.masood.simplecontactlist.database.Contact;
 import com.example.masood.simplecontactlist.database.MyContact;
@@ -53,15 +54,19 @@ public class AddContactActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
 //                Log.wtf("INPUT",name.getText().toString()+ " - " + detail.getText().toString() + " - " + number.getText().toString());
-        if(id==-1) {
-            mContact = new MyContact(name.getText().toString(),detail.getText().toString(),number.getText().toString());
+        if(name.getText().toString().isEmpty() || number.getText().toString().isEmpty()) {
+            Toast.makeText(getApplicationContext(),"Name or Number should not be empty!",Toast.LENGTH_SHORT).show();
         } else {
-            mContact.setContactName(name.getText().toString());
-            mContact.setContactDetails(detail.getText().toString());
-            mContact.setContactNumber(number.getText().toString());
+            if(id==-1) {
+                mContact = new MyContact(name.getText().toString(),detail.getText().toString(),number.getText().toString());
+            } else {
+                mContact.setContactName(name.getText().toString());
+                mContact.setContactDetails(detail.getText().toString());
+                mContact.setContactNumber(number.getText().toString());
+            }
+            mContact.save();
+            Intent i = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(i);
         }
-        mContact.save();
-        Intent i = new Intent(getApplicationContext(),MainActivity.class);
-        startActivity(i);
     }
 }

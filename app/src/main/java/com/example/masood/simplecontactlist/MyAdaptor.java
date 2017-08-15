@@ -38,7 +38,7 @@ public class MyAdaptor extends RecyclerView.Adapter<MyAdaptor.ViewHolder> {
         public View layout;
         public ImageView deleteContact;
         public ImageView editContact;
-        public ImageView sendMessage;
+//        public ImageView sendMessage;
 
         public ViewHolder(View v) {
             super(v);
@@ -49,7 +49,7 @@ public class MyAdaptor extends RecyclerView.Adapter<MyAdaptor.ViewHolder> {
             userNumber = (TextView) v.findViewById(R.id.user_number_tv);
             deleteContact = (ImageView) v.findViewById(R.id.delete_contact_iv);
             editContact = (ImageView) v.findViewById(R.id.edit_contact_iv);
-            sendMessage = (ImageView) v.findViewById(R.id.delete_contact_iv);
+//            sendMessage = (ImageView) v.findViewById(R.id.delete_contact_iv);
         }
 
     }
@@ -101,18 +101,18 @@ public class MyAdaptor extends RecyclerView.Adapter<MyAdaptor.ViewHolder> {
                 context.startActivity(callIntent);
             }
         });
-        holder.sendMessage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //starting a message editor
-                Intent smsIntent = new Intent(Intent.ACTION_SENDTO);
-                smsIntent.addCategory(Intent.CATEGORY_DEFAULT);
-                smsIntent.setType("vnd.android-dir/mms-sms");
-                smsIntent.setData(Uri.parse("sms:" + m.getContactNumber()));
-                smsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(smsIntent);
-            }
-        });
+//        holder.sendMessage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //starting a message editor
+//                Intent smsIntent = new Intent(Intent.ACTION_SENDTO);
+//                smsIntent.addCategory(Intent.CATEGORY_DEFAULT);
+//                smsIntent.setType("vnd.android-dir/mms-sms");
+//                smsIntent.setData(Uri.parse("sms:" + m.getContactNumber()));
+//                smsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                context.startActivity(smsIntent);
+//            }
+//        });
     }
 
     @Override
