@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.masood.simplecontactlist.MainActivity">
+    tools:context="com.example.eduin.simplecontactlist.MainActivity">
     
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,13 +32,13 @@
             />
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
         android:id="@+id/my_recycler_view"
         android:layout_below="@id/search_layout"
-        ></android.support.v7.widget.RecyclerView>
+        ></androidx.recyclerview.widget.RecyclerView>
 
     <ImageView
         android:layout_width="wrap_content"

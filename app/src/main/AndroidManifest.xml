@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.masood.simplecontactlist">
+    package="com.example.eduin.simplecontactlist">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
@@ -24,14 +24,14 @@
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="com.example" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.eduin.simplecontactlist.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddContactActivity"></activity>
+        <activity android:name="com.example.eduin.simplecontactlist.AddContactActivity"></activity>
     </application>
 
 </manifest>
