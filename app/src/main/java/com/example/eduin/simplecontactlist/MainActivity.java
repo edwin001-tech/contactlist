@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = AddContactActivity.getActivityIntent(getApplication(),-1);
                 startActivity(i);
+                finish();
             }
         });
     }
