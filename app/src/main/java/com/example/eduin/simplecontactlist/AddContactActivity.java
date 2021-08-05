@@ -64,6 +64,7 @@ public class AddContactActivity extends AppCompatActivity implements View.OnClic
             mContact.save();
             Intent i = new Intent(getApplicationContext(),MainActivity.class);
             startActivity(i);
+            finish();
         }
     }
 }

@@ -5,40 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.eduin.simplecontactlist.MainActivity">
-    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/search_layout"
-        android:orientation="horizontal"
-        android:weightSum="7"
-        >
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:hint="Search here..."
-            android:id="@+id/serach_et"
-            android:padding="1dp"
-            android:layout_weight="6"
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Find"
-            android:textSize="20dp"
-            android:id="@+id/search_btn"
-            android:layout_weight="1"
-            android:padding="1dp"
-            />
-    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
         android:id="@+id/my_recycler_view"
-        android:layout_below="@id/search_layout"
-        ></androidx.recyclerview.widget.RecyclerView>
+        />
 
     <ImageView
         android:layout_width="wrap_content"
