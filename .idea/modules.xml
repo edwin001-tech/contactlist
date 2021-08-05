@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SimpleContactList.iml" filepath="$PROJECT_DIR$/.idea/modules/SimpleContactList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SimpleContactList.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SimpleContactList.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/contactlist-1.iml" filepath="$PROJECT_DIR$/.idea/modules/contactlist-1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/contactlist-1.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/contactlist-1.app.iml" />
     </modules>

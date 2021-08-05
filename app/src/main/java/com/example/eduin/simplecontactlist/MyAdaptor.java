@@ -12,6 +12,7 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.eduin.simplecontactlist.database.MyContact;
@@ -58,6 +59,7 @@ public class MyAdaptor extends RecyclerView.Adapter<MyAdaptor.ViewHolder> implem
     private Context context;
 
 
+    @NonNull
     @Override
     public MyAdaptor.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
